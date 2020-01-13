@@ -1,0 +1,9 @@
+{
+  "name": "scroll-to-component",
+  "version": "1.0.0",
+  "description": "React Scroll To Component.",
+  "main": "main.js",
+  "author": "henri.zhang",
+  "license": "MIT",
+  "private": false
+}
