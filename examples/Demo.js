@@ -1,27 +1,48 @@
 import React, { useRef } from 'react';
 import A from './A';
+import B from './B';
 import ScrollToComponent from './../src/components/ScrollToComponent';
 
 const Demo = () => {
-  const one = useRef();
+  const multi = useRef();
+  const nil = useRef();
+  const cls = useRef();
+  const func = useRef();
 
-  const scrollToFourth = () => {
-    one.current.scrollIntoView({ behavior: 'smooth' });
+  const scrollToMulti = () => {
+    multi.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToNil = () => {
+    nil.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToCls = () => {
+    cls.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToFunc = () => {
+    func.current.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <div>
       <div style={{ position: 'fixed' }}>
-        <button>First</button>
-        <button>Second</button>
-        <button>Third</button>
-        <button onClick={scrollToFourth}>Fourth</button>
+        <button onClick={scrollToMulti}>Multi</button>
+        <button onClick={scrollToNil}>Null</button>
+        <button onClick={scrollToCls}>Cls</button>
+        <button onClick={scrollToFunc}>Func</button>
       </div>
-      <A text="Component One" />
-      <A text="Component Two" />
-      <A text="Component Three" />
-      <ScrollToComponent ref={one}>
-        <A text="Component Four" />
+      <ScrollToComponent ref={multi}>
+        <A text="Multi Child One" />
+        <A text="Multi Child Two" />
+      </ScrollToComponent>
+      <ScrollToComponent ref={nil}></ScrollToComponent>
+      <ScrollToComponent ref={cls}>
+        <B text="Class Component" />
+      </ScrollToComponent>
+      <ScrollToComponent ref={func}>
+        <A text="Function Component" />
       </ScrollToComponent>
     </div>
   );
