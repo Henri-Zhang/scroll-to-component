@@ -6,6 +6,11 @@
   "author": "Henri Zhang <henrizhang@qq.com>",
   "license": "MIT",
   "private": false,
+  "keywords": [
+    "react",
+    "scroll",
+    "DOM element"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:Henri-Zhang/scroll-to-component.git"
