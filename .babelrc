@@ -1,4 +1,7 @@
 {
-  "presets": ["react", "es2015"],
-  "plugins": ["transform-react-jsx"]
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "@babel/preset-react"
+  ]
 }

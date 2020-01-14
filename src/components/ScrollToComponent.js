@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useRef, useImperativeHandle, forwardRef } from 'react';
 
-const ScrollToComponent = () => {
-  return <h1>Initial</h1>;
+const ScrollToComponent = ({ mode = 'wrap', children }, ref) => {
+  const wrapper = useRef();
+
+  useImperativeHandle(ref, () => ({
+    scrollIntoView: param => {
+      wrapper.current.scrollIntoView(param);
+    }
+  }));
+
+  return <div ref={wrapper}>{children}</div>;
 };
 
-export default ScrollToComponent;
+export default forwardRef(ScrollToComponent);
